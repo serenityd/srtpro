@@ -1,0 +1,330 @@
+1
+00:00:00,250 --> 00:00:03,070
+Okay, we are here in the Google Self Driving Car.
+好的，我们在Google自驾车。
+
+2
+00:00:03,070 --> 00:00:03,570
+We're inside.
+我们在里面。
+
+3
+00:00:03,570 --> 00:00:05,040
+It's obviously driving itself.
+这显然是在驾驶自己。
+
+4
+00:00:05,040 --> 00:00:07,070
+And it's doing everything by itself.
+它本身就是在做一切事情。
+
+5
+00:00:07,070 --> 00:00:09,260
+>> And I am here as a passenger.
+\u003e\u003e我在这里是一名乘客。
+
+6
+00:00:09,260 --> 00:00:11,670
+I'm really hoping that Sebastian did a good job in training this,
+我真的希望塞巴斯蒂安在训练中做得很好，
+
+7
+00:00:11,670 --> 00:00:13,540
+because he is not driving right now, and I-
+因为他现在不开车，而我 - 
+
+8
+00:00:13,540 --> 00:00:15,150
+>> I am not driving, it drives better than me.
+\u003e\u003e我不开车，比我开车更好。
+
+9
+00:00:15,150 --> 00:00:16,149
+>> I am at the mercy of this car.
+\u003e\u003e我受这辆车的摆布。
+
+10
+00:00:16,149 --> 00:00:17,830
+That's true, it does drive better than me.
+这是事实，它确实比我强。
+
+11
+00:00:17,830 --> 00:00:19,570
+>> So why are we talking about self driving cars then?
+\u003e\u003e那么我们为什么要谈论自驾车呢？
+
+12
+00:00:19,570 --> 00:00:20,940
+>> Why are we talking about self driving cars?
+\u003e\u003e为什么我们在谈论自动驾驶汽车？
+
+13
+00:00:20,940 --> 00:00:23,380
+Well we're going to start by talking about supervised classification, and
+那么我们将首先讨论监督分类，并且
+
+14
+00:00:23,380 --> 00:00:26,060
+self driving cars are one big supervised classification problem.
+自驾车是一个很大的监督分类问题。
+
+15
+00:00:26,060 --> 00:00:27,020
+>> What does supervised mean?
+\u003e\u003e监督什么意思？
+
+16
+00:00:27,020 --> 00:00:29,170
+>> Supervised means that you have a bunch of examples.
+\u003e\u003e监督意味着你有一堆例子。
+
+17
+00:00:29,170 --> 00:00:32,150
+Where you know sort of the correct answer in those examples.
+在这些例子中，你知道哪些是正确的答案。
+
+18
+00:00:32,150 --> 00:00:35,140
+So I know that you have example of this from the self driving cars.
+所以我知道你有自动驾驶汽车的例子。
+
+19
+00:00:35,140 --> 00:00:37,710
+>> Yeah so I mean we, we train our car and
+\u003e\u003e是的，我的意思是我们，我们训练我们的车和
+
+20
+00:00:37,710 --> 00:00:39,350
+we show the car what's the right behavior.
+我们展示了汽车什么是正确的行为。
+
+21
+00:00:39,350 --> 00:00:42,915
+And we did the Autobahn challenge we would take it out for a spin and it would
+我们做了高速公路的挑战，我们会把它拿出来做一个旋转，它会
+
+22
+00:00:42,915 --> 00:00:46,490
+very carefully watch us human drivers drive and would emulate our behavior.
+非常仔细地观察我们人类的驱动力，并会模仿我们的行为。
+
+23
+00:00:46,490 --> 00:00:49,360
+>> And in fact, this is sort of how people learn to drive, right?
+\u003e\u003e事实上，这就是人们学习驾驶的方式，对吧？
+
+24
+00:00:49,360 --> 00:00:51,387
+>> Yeah, I think so. When I was a child, I watched my parents drive.
+\u003e\u003e是的，我认为是。
+
+25
+00:00:51,387 --> 00:00:53,101
+And they weren't really good drivers, but
+他们并不是很好的车手，但是
+
+26
+00:00:53,101 --> 00:00:55,190
+I would still copy a lot of stuff from them.
+我仍然会从他们那里复制很多东西。
+
+27
+00:00:55,190 --> 00:00:56,410
+>> Yeah, so it's kind of like,
+\u003e\u003e是的，所以有点像，
+
+28
+00:00:56,410 --> 00:00:58,560
+in the way the humans drive by watching lots of examples.
+通过观察大量的例子，人类驾驶的方式。
+
+29
+00:00:58,560 --> 00:01:00,580
+That's what computers do when they're doing machine learnings.
+这就是计算机在做机器学习时所做的事情。
+
+30
+00:01:00,580 --> 00:01:03,110
+You give them lots of examples, and they start to figure out what's going on.
+你给了他们很多例子，他们开始弄清楚发生了什么。
+
+31
+00:01:03,110 --> 00:01:04,190
+That's what we'll be learning about.
+这就是我们将要学习的内容。
+
+32
+00:01:04,190 --> 00:01:04,780
+>> And it's totally true.
+\u003e\u003e这完全正确。
+
+33
+00:01:04,780 --> 00:01:06,480
+In this unit, you're going to be learning about.
+在这个单元中，你将会学习。
+
+34
+00:01:06,480 --> 00:01:08,844
+Machine learning, the same way we, we program steps on a car.
+机器学习，就像我们一样，我们在汽车上编程步骤。
+
+35
+00:01:08,844 --> 00:01:10,720
+You're going to program data and, and
+你将编程数据，和
+
+36
+00:01:10,720 --> 00:01:15,450
+test out whether you can make a car go fast and slow at the appropriate time.
+测试你是否可以让汽车在适当的时候快速行驶。
+
+37
+00:01:15,450 --> 00:01:17,740
+Using machine learning supervised learning.
+使用机器学习监督学习。
+
+38
+00:01:17,740 --> 00:01:18,280
+>> That's right. So
+\u003e\u003e没错。
+
+39
+00:01:18,280 --> 00:01:20,940
+we're going to be looking at a really cool terrain classification problem that
+我们将看到一个非常酷的地形分类问题
+
+40
+00:01:20,940 --> 00:01:22,460
+was very important for Stanley.
+对斯坦利非常重要。
+
+41
+00:01:22,460 --> 00:01:23,420
+You want to introduce that?
+你想介绍一下吗？
+
+42
+00:01:23,420 --> 00:01:26,400
+>> So, in Stanley's case, I was driving through the desert and
+\u003e\u003e所以，在斯坦利的情况下，我正在沙漠中穿行
+
+43
+00:01:26,400 --> 00:01:28,000
+the desert terrain is, like, ruts.
+沙漠的地形就像车辙。
+
+44
+00:01:28,000 --> 00:01:29,340
+And boredom can be very brutal.
+无聊可能非常残酷。
+
+45
+00:01:29,340 --> 00:01:32,230
+So it you drive too fast, you are running the risk of flipping over and
+所以它开得太快了，你正在冒着翻转的风险
+
+46
+00:01:32,230 --> 00:01:33,420
+destroying yourself.
+摧毁你自己。
+
+47
+00:01:33,420 --> 00:01:36,680
+So one thing we've trained the car to do is to really slow down at
+所以我们训练赛车要做的一件事就是真的放慢速度
+
+48
+00:01:36,680 --> 00:01:37,440
+the appropriate time.
+适当的时间。
+
+49
+00:01:37,440 --> 00:01:39,320
+We did this not by writing little rules,
+我们不是通过编写小规则来做到这一点，
+
+50
+00:01:39,320 --> 00:01:41,790
+we did it by us demonstrating to the car how we drive.
+我们通过向车辆展示我们如何驾驶来做到这一点。
+
+51
+00:01:41,790 --> 00:01:43,140
+And it will just emulate us.
+它只会模仿我们。
+
+52
+00:01:43,140 --> 00:01:44,830
+>> How many miles did you have to drive to train that.
+\u003e\u003e您需要开车多少英里来训练。
+
+53
+00:01:44,830 --> 00:01:45,970
+>> Oh thousands of miles.
+\u003e\u003e哦千里。
+
+54
+00:01:45,970 --> 00:01:48,220
+We spent thousands of miles everyday in the desert.
+我们每天在沙漠中度过数千英里。
+
+55
+00:01:48,220 --> 00:01:50,010
+>> Wow. >> And it took quite a while for me to copy.
+\u003e\u003e哇。 
+
+56
+00:01:50,010 --> 00:01:51,680
+Smart. >> Your poor grad students.
+聪明。 
+
+57
+00:01:51,680 --> 00:01:52,410
+I can only imagine.
+我只能想象。
+
+58
+00:01:52,410 --> 00:01:55,430
+>> Well, I was the guy who had the pizza for everybody, but, it was a great time
+\u003e\u003e我是那个为每个人都准备披萨的人，但那是一段美好的时光
+
+59
+00:01:55,430 --> 00:01:58,420
+because it was no email, we just had the, us and the software.
+因为它不是电子邮件，我们只有我们和软件。
+
+60
+00:01:58,420 --> 00:02:01,240
+And every time you got the software back it was very obvious.
+每次你拿回软件都很明显。
+
+61
+00:02:01,240 --> 00:02:02,340
+The car would punish us.
+这辆车会惩罚我们。
+
+62
+00:02:02,340 --> 00:02:03,020
+>> Oh, that sounds great.
+\u003e\u003e哦，这听起来不错。
+
+63
+00:02:03,020 --> 00:02:05,205
+So, I think we should probably get started with that.
+所以，我认为我们可能应该开始。
+
+64
+00:02:05,205 --> 00:02:08,008
+Let;s try out a few different supervised classification problems.
+让我们尝试一些不同的监督分类问题。
+
+65
+00:02:08,008 --> 00:02:10,639
+>> Yeah, so the unit's all about supervised learning, so let's dig in.
+\u003e\u003e是的，所以单位的所有关于监督学习，所以让我们深入挖掘。
+
+66
+00:02:10,639 --> 00:02:11,140
+>> Sounds great.
+\u003e\u003e听起来不错。
+
